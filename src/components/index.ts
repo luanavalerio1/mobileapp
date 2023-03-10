@@ -1,0 +1,1 @@
+export { ButtonSlider as ComponentButtonSlider "./ButtonSlider"}
