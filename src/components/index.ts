@@ -1,1 +1,2 @@
-export { ButtonSlider as ComponentButtonSlider "./ButtonSlider"}
+export { ButtonSlider as ComponentButtonSlider } from "./ButtonSlider"
+export { TitleSlider as TitleSlider } from "./TitleSlider"
