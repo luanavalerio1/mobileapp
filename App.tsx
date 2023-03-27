@@ -1,10 +1,9 @@
-import React from 'react';
-import { Dispatch, SetStateAction, useState} from 'react';
+import { Dispatch, SetStateAction, useState, } from 'react';
 import { 
   ScreensSlider1, ScreensSlider2, ScreensSlider3, ScreensSlider4,
 } from "./src/screens" 
 export default function App() {
-  const [page, setPage] = useState(1)
+  const [page, setPage, ] = useState(1)
   switch (page) {
     case 1: 
     return <ScreensSlider1 setPageI={setPage} />
