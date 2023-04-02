@@ -12,8 +12,18 @@ export const styles = StyleSheet.create({
         backgroundColor: colors.primary
     },
     buttonSlider: {
-        flexDirection: "row",
+        flexDirection: "column",
         justifyContent: 'space-around',
-        marginBottom: 20
+        marginBottom: 30
+    },
+    TitleI: {
+        fontSize: 12, 
+        fontWeight: 'bold',
+    },
+    Img: {
+        alignContent: "center"
+       
+
     }
+    
 });
