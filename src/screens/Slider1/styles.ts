@@ -16,11 +16,11 @@ export const styles = StyleSheet.create({
         justifyContent: 'space-around',
         marginBottom: 30
     },
-    TitleI: {
-        fontSize: 12, 
+    imagem11Text: {
+        fontSize: 20, 
         fontWeight: 'bold',
     },
-    Img: {
+    container: {
         alignContent: "center"
        
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, View, Image, TouchableOpacity } from 'react-native';
+import { FlatList, View, Image, Text} from 'react-native';
 import { IPage } from '../../../App';
 import {
     ComponentButtonSlider, ComponentTitleSlider, ComponentListMarker
@@ -24,9 +24,10 @@ export function Slider1({ setPageI }: IPage) {
 />
                 
                 <View style={styles.buttonSlider} >
-                    <ComponentButtonSlider onPressI={() => setPageI(2)} />
-                    <ComponentButtonSlider onPressI={() => setPageI(3)} />
-                    <ComponentButtonSlider onPressI={() => setPageI(4)} />
+                    <ComponentButtonSlider texto= 'COFFE' onPressI={() => setPageI(2)} />
+                    <ComponentButtonSlider texto = 'SWEET' onPressI={() => setPageI(3)} />
+                    <ComponentButtonSlider texto = 'BREADS' onPressI={() => setPageI(4)} />
+                   
                     
                 </View>
                 </View>

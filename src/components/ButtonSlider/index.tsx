@@ -3,9 +3,11 @@ import { styles } from './styles'
 export interface IBSlider {
     onPressI: () => void
 }
-export function ButtonSlider({ onPressI }: IBSlider) {
+export function ButtonSlider({ onPressI, texto }: IBSlider) {
     return (
-        < TouchableOpacity style={styles.ball} onPress={onPressI} />
+        < TouchableOpacity style={styles.Text} onPress={onPressI} >
+        <Text>{texto}</Text>
+        ?</TouchableOpacity>
     ) 
 
 }
