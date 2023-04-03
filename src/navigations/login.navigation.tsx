@@ -5,7 +5,7 @@ import {ScreenLogin} from "../screens"
 
 const Stack = createStackNavigator();
 
-function LoginNavigation() {
+export function LoginNavigation() {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Login" component={ScreenLogin} />

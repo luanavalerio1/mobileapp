@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, KeyboardAvoidingView
+import { View, Text, KeyboardAvoidingView,
     TextInput
 
 } from "react-native"
@@ -18,7 +18,7 @@ export function Login() {
                     placeholderTextColor={colors.second}
                     keyboardType="email-address"
                     autoCapitalize='none'
-                    style={styles.input}
+                    style={styles.input} />
 
                 </View>
             </KeyboardAvoidingView> 

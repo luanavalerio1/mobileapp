@@ -3,6 +3,8 @@ import { colors } from '../../styles/colors';
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
+        alignItems: "center",
+        justifyContent: "center"
     },
     panel:{
         flex: 1,
@@ -20,10 +22,6 @@ export const styles = StyleSheet.create({
         fontSize: 20, 
         fontWeight: 'bold',
     },
-    container: {
-        alignContent: "center"
-       
-
-    }
+    
     
 });
