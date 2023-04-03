@@ -1,4 +1,4 @@
-import { TouchableOpacity } from 'react-native'
+import { TouchableOpacity, Text } from 'react-native'
 import { styles } from './styles'
 export interface IBSlider {
     onPressI: () => void

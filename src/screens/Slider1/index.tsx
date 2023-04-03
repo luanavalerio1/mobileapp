@@ -24,7 +24,7 @@ export function Slider1({ setPageI }: IPage) {
 />
                 
                 <View style={styles.buttonSlider} >
-                    <ComponentButtonSlider texto= 'COFFE' onPressI={() => setPageI(2)} />
+                    <ComponentButtonSlider texto= 'COFFES' onPressI={() => setPageI(2)} />
                     <ComponentButtonSlider texto = 'SWEET' onPressI={() => setPageI(3)} />
                     <ComponentButtonSlider texto = 'BREADS' onPressI={() => setPageI(4)} />
                    
