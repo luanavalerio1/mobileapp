@@ -3,16 +3,25 @@ import { View, Text, KeyboardAvoidingView,
     TextInput, 
 
 } from "react-native";
-import { styles } from '././styles';
+import { styles } from './styles';
 import {MaterialIcons, Entypo} from '@expo/vector-icons';
 import { colors } from '../../styles/colors';
-import {ComponentButtonInterface} from "../../components"
+import {ComponentButtonInterface} from "../../components";
+import { Ionicons } from '@expo/vector-icons';
 
 export function Login() {
     return (
         <View style={styles.container}>
             <KeyboardAvoidingView>
-                <Text style={styles.title} >Login</Text>
+                <Text style={styles.title} >Cadastre-se</Text>
+                <View style={styles.formRow} >
+                <Ionicons name="person" size={24} color="black" />
+                    <TextInput
+                    placeholder='Nome'
+                    style={styles.input} 
+                    />
+
+                </View>
                 <View style={styles.formRow} >
                     <MaterialIcons name="email" style={styles.icon} />
                     <TextInput
@@ -35,8 +44,8 @@ export function Login() {
                     />
 
                 </View>
-                <ComponentButtonInterface title="Entrar" type="primary" onPressI={()=>{console.log("Login")}} />
-                <ComponentButtonInterface title="Cadastrar" type="primary" onPressI={()=>{console.log("Login")}} />
+                <ComponentButtonInterface title="Salvar" type="primary" onPressI={()=>{console.log("Cadastar")}} />
+                <ComponentButtonInterface title="Voltar" type="primary" onPressI={()=>{console.log("Login")}} />
             </KeyboardAvoidingView> 
         </View>
     )

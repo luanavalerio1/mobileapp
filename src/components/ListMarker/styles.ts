@@ -9,7 +9,6 @@ export const styles = StyleSheet.create({
     listMarker: {
         margin: 10,
         marginTop: 60, 
-        flexDirection: 'row',
         alignItems: 'center'
     },
     textMarker: {
@@ -17,8 +16,8 @@ export const styles = StyleSheet.create({
         fontSize: 20
     },
     imagem: {
-        width: 225,
-        height: 32
+        width: 90,
+        height: 90
         
     }
 })

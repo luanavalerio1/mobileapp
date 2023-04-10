@@ -1,36 +1,39 @@
-import React from 'react';
-import { FlatList, View } from 'react-native';
-import { IPage } from '../../../App';
+import React from "react";
+import { FlatList, View, StyleSheet, Image } from "react-native";
+import { IPage } from "../../../App";
 import {
-    ComponentButtonSlider, ComponentTitleSlider, ComponentListMarker
-} from '../../components';
-import { styles } from './styles';
-export function Slider2({ setPageI }: IPage) {
-    const SlideTexts = [
-        { id: '1', text: 'Iced Coffee Cocktail', img: "imagem1.png" },
-        { id: '2', text: 'Vietnamese Iced Coffee', img: "slide3b.png" },
-        { id: '3', text: 'Iced Coffee', img: "slide3c.png" },
+  ComponentButtonSlider,
+  ComponentListMarker,
+  ComponentTitleSlider,
+} from "../../components";
+import { styles } from "./styles";
 
-    ] 
-    return (
-        <>
-       < View style={styles.panel} />
-                    <ComponentTitleSlider titleI='COFFES' />
-                   
-                    <View style={styles.buttonSlider} >
-                    <ComponentButtonSlider onPressI={() => setPageI(1)} texto={''} />
-                    <ComponentButtonSlider onPressI={() => setPageI(2)} texto={''} />
-                    <ComponentButtonSlider onPressI={() => setPageI(3)} texto={''} />
-                    <ComponentButtonSlider onPressI={() => setPageI(4)} texto={''} />
-                    <ComponentButtonSlider onPressI={() => setPageI(5)} texto={''} />
-                    
-                </View>
-                
-            
+export function Slider1({ setPageI }: IPage) {
+  const image1 = require("../../assets/slide3c.png");
+  const slide1Texts = [{ id: "1", text: "Iced Coffee Cocktail", img: image1 },
+  { id: "2", text: "Vietnamese Iced Coffee", img: image1 },
+  { id: "3", text: "Iced Coffee", img: image1 }];
 
-        </ >
-
-
-    
-    );
+  return (
+    <>
+    <View style={styles.container}>
+      <View style={styles.panel}>
+        <ComponentTitleSlider titleI="Our Menu"   />
+        <FlatList
+          data={slide1Texts}
+          renderItem={({ item }) => (
+            <ComponentListMarker key={item.id} textMarker={item.text} image={item.img} />
+          )}
+        />
+      </View>
+      <View style={styles.button}>
+            <ComponentButtonSlider onPressI={() => setPageI(1)} />
+            <ComponentButtonSlider onPressI={() => setPageI(2)} />
+            <ComponentButtonSlider onPressI={() => setPageI(3)} />
+            <ComponentButtonSlider onPressI={() => setPageI(4)} />
+            <ComponentButtonSlider onPressI={() => setPageI(5)} />
+      </View>
+    </View>
+    </>
+  );
 }

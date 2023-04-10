@@ -1,38 +1,40 @@
-import React from 'react';
-import { FlatList, View, Image, Text} from 'react-native';
-import { IPage } from '../../../App';
+import React from "react";
+import { FlatList, View, StyleSheet, Image } from "react-native";
+import { IPage } from "../../../App";
 import {
-    ComponentButtonSlider, ComponentTitleSlider, ComponentListMarker
-} from '../../components';
-import { styles } from './styles';
+  ComponentButtonSlider,
+  ComponentListMarker,
+  ComponentTitleSlider,
+} from "../../components";
+import { styles } from "./styles";
+
 export function Slider1({ setPageI }: IPage) {
-    const image11 = require("../../assets/image11.png")
-    const imagem = [
-        { id: '1', text: "WELCOME TO LUANA`S BAKERY" },
-    ]
-    return (
-       <>
-       
-                <View style={styles.panel} >
-                    <ComponentTitleSlider titleI='Our Menu' />
-                    <Image source={image11} style={styles.container} />   
+  const image1 = require("../../assets/imagem1.png");
+  const slide1Texts = [{ id: "1", text: "Iced Coffee Cocktail", img: image1 },
+  { id: "2", text: "Vietnamese Iced Coffee",  img: image1 },
+  { id: "3", text: "Iced Coffee", img: image1 }];
 
-                   
-                <View style={styles.button} >
-                    <ComponentButtonSlider texto= 'COFFES' onPressI={() => setPageI(2)} />
-                    <ComponentButtonSlider texto = 'SWEET' onPressI={() => setPageI(3)} />
-                    <ComponentButtonSlider texto = 'BREADS' onPressI={() => setPageI(4)} />
-                   
-                    
-                </View>
-                </View>
+  return (
+    <>
+    <View style={styles.container}>
+      <View style={styles.panel}>
+        <ComponentTitleSlider titleI="COFFES"   />
+        <FlatList
+          data={slide1Texts}
+          renderItem={({ item }) => (
+            <ComponentListMarker key={item.id} textMarker={item.text} image={item.img} />
             
-
-        </ >
-
-
-    );
+          )}
+        />
+      </View>
+      <View style={styles.button}>
+            <ComponentButtonSlider onPressI={() => setPageI(1)} />
+            <ComponentButtonSlider onPressI={() => setPageI(2)} />
+            <ComponentButtonSlider onPressI={() => setPageI(3)} />
+            <ComponentButtonSlider onPressI={() => setPageI(4)} />
+            <ComponentButtonSlider onPressI={() => setPageI(5)} />
+      </View>
+    </View>
+    </>
+  );
 }
-
-
-
