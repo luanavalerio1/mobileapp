@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, View, TouchableOpacity } from 'react-native';
+import { FlatList, View } from 'react-native';
 import { IPage } from '../../../App';
 import {
     ComponentButtonSlider, ComponentTitleSlider, ComponentListMarker
@@ -16,18 +16,13 @@ export function Slider2({ setPageI }: IPage) {
         <>
        < View style={styles.panel} />
                     <ComponentTitleSlider titleI='COFFES' />
-                    <FlatList
-                    data={SlideTexts}
-                    renderItem={({item}) =>
-                <ComponentListMarker key={item.id} textMarker={item.text} />
-}
-/> 
+                   
                     <View style={styles.buttonSlider} >
-                    <ComponentButtonSlider onPressI={() => setPageI(1)} />
-                    <ComponentButtonSlider onPressI={() => setPageI(2)} />
-                    <ComponentButtonSlider onPressI={() => setPageI(3)} />
-                    <ComponentButtonSlider onPressI={() => setPageI(4)} />
-                    <ComponentButtonSlider onPressI={() => setPageI(5)} />
+                    <ComponentButtonSlider onPressI={() => setPageI(1)} texto={''} />
+                    <ComponentButtonSlider onPressI={() => setPageI(2)} texto={''} />
+                    <ComponentButtonSlider onPressI={() => setPageI(3)} texto={''} />
+                    <ComponentButtonSlider onPressI={() => setPageI(4)} texto={''} />
+                    <ComponentButtonSlider onPressI={() => setPageI(5)} texto={''} />
                     
                 </View>
                 

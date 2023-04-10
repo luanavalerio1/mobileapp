@@ -1,13 +1,17 @@
-import { Text, View, Image } from 'react-native'
-import { styles } from './styles'
+import React from 'react';
+import { View, Text, Image } from 'react-native';
+import { styles } from './styles';
+
 export interface ITextMarker {
-    textMarker: string 
+    textMarker: string;
+    imageSource: string;
 }
-export function ListMarker({ textMarker }: ITextMarker ){
+
+export function ListMarker({ textMarker, imageSource}: ITextMarker ){
     return (
         <View style={styles.listMarker}>
-            <Text style={styles.textMarker} >{textMarker}</Text>
+            <Image source={imagem1} style={styles.container} />
+            <Text style={styles.textMarker}>{textMarker}Iced Coffee</Text>
         </View>
-
-    )
+    );
 }

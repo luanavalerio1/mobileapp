@@ -2,9 +2,10 @@ import React from 'react';
 import { View, Text, KeyboardAvoidingView,
     TextInput
 
-} from "react-native"
-import { styles } from '../Slider1/styles';
+} from "react-native";
+import { styles } from '././styles';
 import {MaterialIcons} from '@expo/vector-icons';
+import { colors } from '../../styles/colors';
 
 export function Login() {
     return (
@@ -15,7 +16,7 @@ export function Login() {
                     <MaterialIcons name="email" style={styles.icon} />
                     <TextInput
                     placeholder='E-mail'
-                    placeholderTextColor={colors.second}
+                    placeholderTextColor={colors.primary}
                     keyboardType="email-address"
                     autoCapitalize='none'
                     style={styles.input} />

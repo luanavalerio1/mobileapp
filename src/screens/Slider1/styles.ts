@@ -4,23 +4,29 @@ export const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
+        marginTop: 210,
+        margin: 200,
     },
     panel:{
         flex: 1,
-        marginTop: 40,
+        marginTop: 20,
         margin: 20,
         borderRadius: 20,
         backgroundColor: colors.primary
     },
-    buttonSlider: {
-        flexDirection: "column",
-        justifyContent: 'space-around',
-        marginBottom: 30
+    button: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingVertical: 20,
+        paddingHorizontal: 32,
+        borderRadius: 4,
+        
+        
     },
-    imagem11Text: {
-        fontSize: 20, 
-        fontWeight: 'bold',
+    Text: {
+    fontSize: 16,
+    fontWeight: 'bold',
     },
     
     

@@ -7,8 +7,8 @@ import {
 import { styles } from './styles';
 export function Slider1({ setPageI }: IPage) {
     const image11 = require("../../assets/image11.png")
-    const image11Texts = [
-        { id: '1', text: 'WELCOME TO LUANA`S BAKERY' },
+    const imagem = [
+        { id: '1', text: "WELCOME TO LUANA`S BAKERY" },
     ]
     return (
        <>
@@ -16,14 +16,9 @@ export function Slider1({ setPageI }: IPage) {
                 <View style={styles.panel} >
                     <ComponentTitleSlider titleI='Our Menu' />
                     <Image source={image11} style={styles.container} />   
-                    <FlatList
-                        data={image11Texts}
-                        renderItem={({item}) =>
-                    <ComponentListMarker key={item.id} textMarker={item.text} />
-    }
-/>
-                
-                <View style={styles.buttonSlider} >
+
+                   
+                <View style={styles.button} >
                     <ComponentButtonSlider texto= 'COFFES' onPressI={() => setPageI(2)} />
                     <ComponentButtonSlider texto = 'SWEET' onPressI={() => setPageI(3)} />
                     <ComponentButtonSlider texto = 'BREADS' onPressI={() => setPageI(4)} />

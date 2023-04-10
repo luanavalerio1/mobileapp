@@ -9,7 +9,7 @@ export interface IBSlider {
 export function ButtonSlider({ onPressI, texto }: IBSlider) {
   return (
     <TouchableOpacity style={styles.ball} onPress={onPressI}>
-      <Text>{texto}</Text>
+      <Text>{texto}Cadastrar</Text>
     </TouchableOpacity>
   );
 }
