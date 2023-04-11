@@ -7,11 +7,16 @@ export const styles = StyleSheet.create({
         borderRadius: 5,
         margin: 10,
     },
-    buttonSecondry:{
-        backgroundColor: colors.primary,
+    buttonSecondary:{
+        backgroundColor: colors.secondary,
         borderRadius: 5,
         margin: 10,
 
+    },
+    buttonThird: {
+        backgroundColor: colors.secondary,
+        borderRadius: 5,
+        margin: 10
     },
     text: {
         fontSize: 18,

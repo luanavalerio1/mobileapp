@@ -1,15 +1,12 @@
 import React from 'react';
-import { View, Text, KeyboardAvoidingView,
-    TextInput, 
-
-} from "react-native";
+import { View, Text, KeyboardAvoidingView,TextInput} from "react-native";
 import { styles } from './styles';
 import {MaterialIcons, Entypo} from '@expo/vector-icons';
 import { colors } from '../../styles/colors';
 import {ComponentButtonInterface} from "../../components";
 import { Ionicons } from '@expo/vector-icons';
 
-export function Login() {
+export function Cadastrar() {
     return (
         <View style={styles.container}>
             <KeyboardAvoidingView>
@@ -26,7 +23,7 @@ export function Login() {
                     <MaterialIcons name="email" style={styles.icon} />
                     <TextInput
                     placeholder='E-mail'
-                    placeholderTextColor={colors.black}
+                    placeholderTextColor={colors.secondary}
                     keyboardType="email-address"
                     autoCapitalize='none'
                     style={styles.input} 
@@ -37,7 +34,7 @@ export function Login() {
                 <Entypo name="key" style={styles.icon}/>
                 <TextInput
                     placeholder='Senha'
-                    placeholderTextColor={colors.black}
+                    placeholderTextColor={colors.secondary}
                    secureTextEntry={true}
                     autoCapitalize='none'
                     style={styles.input} 

@@ -1,5 +1,5 @@
 import React from "react";
-import { FlatList, View, StyleSheet, Image } from "react-native";
+import { FlatList, View, Image } from "react-native";
 import { IPage } from "../../../App";
 import {
   ComponentButtonSlider,
@@ -8,9 +8,9 @@ import {
 } from "../../components";
 import { styles } from "./styles";
 
-export function Slider1({ setPageI }: IPage) {
+export function Slider2({ setPageI }: IPage) {
   const image1 = require("../../assets/slide3c.png");
-  const slide1Texts = [{ id: "1", text: "Iced Coffee Cocktail", img: image1 },
+  const slide2Texts = [{ id: "1", text: "Iced Coffee Cocktail", img: image1 },
   { id: "2", text: "Vietnamese Iced Coffee", img: image1 },
   { id: "3", text: "Iced Coffee", img: image1 }];
 
@@ -18,9 +18,9 @@ export function Slider1({ setPageI }: IPage) {
     <>
     <View style={styles.container}>
       <View style={styles.panel}>
-        <ComponentTitleSlider titleI="Our Menu"   />
+        <ComponentTitleSlider titleI="SWEETS"   />
         <FlatList
-          data={slide1Texts}
+          data={slide2Texts}
           renderItem={({ item }) => (
             <ComponentListMarker key={item.id} textMarker={item.text} image={item.img} />
           )}

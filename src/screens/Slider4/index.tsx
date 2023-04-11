@@ -1,41 +1,40 @@
-import React from 'react';
-import { FlatList, View, Image, TouchableOpacity } from 'react-native';
-import { IPage } from '../../../App';
+import React from "react";
+import { FlatList, View, Image } from "react-native";
+import { IPage } from "../../../App";
 import {
-    ComponentButtonSlider, ComponentTitleSlider, ComponentListMarker
-} from '../../components';
-import { styles } from './styles';
+  ComponentButtonSlider,
+  ComponentListMarker,
+  ComponentTitleSlider,
+} from "../../components";
+import { styles } from "./styles";
+
 export function Slider4({ setPageI }: IPage) {
-    const SlideTexts = [
-        { id: '1', text: 'Croissant', img: "slide5a.png" },
-        { id: '2', text: 'Gyeran Ppang ', img: "slide5b.png" },
-        { id: '3', text: 'Ciabatta', img: "slide5c.png" },
+  const image1 = require("../../assets/imagem1.png");
+  const slide4Texts = [{ id: "1", text: "Sucos Naturais", img: image1 },
+  { id: "2", text: "Água",  img: image1 },
+  { id: "3", text: "Refrigerantes", img: image1 }];
 
-    ] 
-    return (
-        <>
-       < View style={styles.panel} />
-                    <ComponentTitleSlider titleI='BREADS' />
-                    <FlatList
-                    data={SlideTexts}
-                    renderItem={({item}) =>
-                <ComponentListMarker key={item.id} textMarker={item.text} />
-}
-/> 
-                    <View style={styles.buttonSlider} >
-                    <ComponentButtonSlider onPressI={() => setPageI(1)} />
-                    <ComponentButtonSlider onPressI={() => setPageI(2)} />
-                    <ComponentButtonSlider onPressI={() => setPageI(3)} />
-                    <ComponentButtonSlider onPressI={() => setPageI(4)} />
-                    <ComponentButtonSlider onPressI={() => setPageI(5)} />
-                    
-                </View>
-                
+  return (
+    <>
+    <View style={styles.container}>
+      <View style={styles.panel}>
+        <ComponentTitleSlider titleI="DRINKS"   />
+        <FlatList
+          data={slide4Texts}
+          renderItem={({ item }) => (
+            <ComponentListMarker key={item.id} textMarker={item.text} image={item.img} />
             
-
-        </ >
-
-
-    
-    );
+          )}
+        />
+      </View>
+      <View style={styles.button}>
+            <ComponentButtonSlider onPressI={() => setPageI(1)} />
+            <ComponentButtonSlider onPressI={() => setPageI(2)} />
+            <ComponentButtonSlider onPressI={() => setPageI(3)} />
+            <ComponentButtonSlider onPressI={() => setPageI(4)} />
+            <ComponentButtonSlider onPressI={() => setPageI(5)} />
+      </View>
+    </View>
+    </>
+  );
 }

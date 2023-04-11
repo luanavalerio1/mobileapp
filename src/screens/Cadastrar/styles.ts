@@ -13,20 +13,25 @@ export const styles = StyleSheet.create({
     color: colors.secondary
     },
     formRow: {
-        margin:10
+        margin:10,
+        flexDirection: "row",
+        alignItems: "center",
+        borderWidth: 1,
+        borderColor: colors.third,
+        borderRadius: 5
 
     },
     icon:{
     fontSize: 24,
-    colors: colors.primary,
+    colors: colors.third,
     padding: 10
 
     },
     input: {
 
     fontSize: 18,
-    padding: 5,
-    width: "80%"
+    padding: 10,
+    width: "70%"
     }
 })
 export default styles

@@ -10,6 +10,7 @@ export function ListMarker({ textMarker, image }: ITextMarker ){
         <View style={styles.listMarker}>
             <Image source={image} style={styles.imagem} />
             <Text style={styles.textMarker} >{textMarker}</Text>
+    
             
             
         </View>
