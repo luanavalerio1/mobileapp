@@ -9,10 +9,12 @@ import {
 import { styles } from "./styles";
 
 export function Slider4({ setPageI }: IPage) {
-  const image1 = require("../../assets/imagem1.png");
+  const image1 = require("../../assets/image8.png");
+  const image2 = require("../../assets/image10.png");
+  const image3 = require("../../assets/image9.png");
   const slide4Texts = [{ id: "1", text: "Sucos Naturais", img: image1 },
-  { id: "2", text: "Água",  img: image1 },
-  { id: "3", text: "Refrigerantes", img: image1 }];
+  { id: "2", text: "Água",  img: image2 },
+  { id: "3", text: "Refrigerantes", img: image3 }];
 
   return (
     <>

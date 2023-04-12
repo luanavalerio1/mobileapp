@@ -10,9 +10,11 @@ import { styles } from "./styles";
 
 export function Slider1({ setPageI }: IPage) {
   const image1 = require("../../assets/imagem1.png");
+  const image2 = require("../../assets/imagem2.png");
+  const image3 = require("../../assets/slide3c.png");
   const slide1Texts = [{ id: "1", text: "Iced Coffee Cocktail", img: image1 },
-  { id: "2", text: "Vietnamese Iced Coffee",  img: image1 },
-  { id: "3", text: "Iced Coffee", img: image1 }];
+  { id: "2", text: "Vietnamese Iced Coffee",  img: image2 },
+  { id: "3", text: "Iced Coffee", img: image3 }];
 
   return (
     <>
