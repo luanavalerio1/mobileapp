@@ -1,5 +1,5 @@
 import React from "react";
-import { FlatList, View, StyleSheet, Image } from "react-native";
+import { FlatList, View, Image } from "react-native";
 import { IPage } from "../../../App";
 import {
   ComponentButtonSlider,
