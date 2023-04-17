@@ -5,8 +5,10 @@ import {MaterialIcons, Entypo} from '@expo/vector-icons';
 import { colors } from '../../styles/colors';
 import {ComponentButtonInterface} from "../../components";
 import { Ionicons } from '@expo/vector-icons';
+import { LoginTypes } from '../../navigations/login.navigation';
 
-export function Cadastrar() {
+
+export function Cadastrar({navigation}: LoginTypes) {
     return (
         <View style={styles.container}>
             <KeyboardAvoidingView>
@@ -15,6 +17,7 @@ export function Cadastrar() {
                 <Ionicons name="person" size={24} color="black" />
                     <TextInput
                     placeholder='Nome'
+                    placeholderTextColor={colors.secondary}
                     style={styles.input} 
                     />
 
