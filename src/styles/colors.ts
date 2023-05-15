@@ -4,4 +4,5 @@ export const colors = {
     third:'#FFFFFF'
     
     
+    
 }

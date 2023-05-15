@@ -1,13 +1,12 @@
 import React from 'react';
 import { DrawerNavigationProp, createDrawerNavigator } from '@react-navigation/drawer';
-import { ScreenPerfil} from "../screens"
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { ScreenPerfil, ScreenCamera} from "../screens"
+import { Ionicons, AntDesign } from '@expo/vector-icons';
 import { colors } from '../styles/colors';
-import { Ionicons } from '@expo/vector-icons';
-import { color } from 'react-native-reanimated';
 type DrawerParamList = {
   Perfil: undefined
-}
+  Camera: undefined
+};
 type DrawerScreenNavigationProp = DrawerNavigationProp<DrawerParamList, 'Perfil'>
 export type DrawerTypes = {
   navigation: DrawerScreenNavigationProp
@@ -15,15 +14,20 @@ export type DrawerTypes = {
  export function DrawerNavigation() {
        const Drawer = createDrawerNavigator<DrawerParamList>();
   return (
-    <Drawer.Navigator
-      screenOptions={{
-        drawerStyle:{
-          backgroundColor: colors.primary,
-        },
-        drawerActiveTintColor: colors.primary
-      }}>
+    <Drawer.Navigator>
+      
       <Drawer.Screen name="Perfil" component={ScreenPerfil} 
          options={{
+          drawerIcon: () => (
+            <Ionicons name='person' size={24} color={colors.third} />
+          )
+         }}
+      />
+      <Drawer.Screen name="Camera" component={ScreenCamera} 
+         options={{
+          drawerIcon: () => (
+            <AntDesign name='camera' size={24} color={colors.third} />
+          )
          }}
       />
     </Drawer.Navigator>

@@ -1,31 +1,46 @@
 import React from 'react';
-import { DrawerNavigationProp, createDrawerNavigator } from '@react-navigation/drawer';
-import { ScreenPerfil} from "../screens"
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { BottomTabNavigationProp, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { ScreenPerfil, ScreenCamera} from "../screens"
 import { colors } from '../styles/colors';
-import { Ionicons } from '@expo/vector-icons';
-import { color } from 'react-native-reanimated';
-type DrawerParamList = {
+import { Ionicons, AntDesign } from '@expo/vector-icons';
+
+
+type TabParamList = {
   Perfil: undefined
+  Camera: undefined
+};
+type TabScreenNavigationProp = BottomTabNavigationProp<TabParamList, 'Perfil'>
+export type TabTypes = {
+  navigation: TabScreenNavigationProp
 }
-type DrawerScreenNavigationProp = DrawerNavigationProp<DrawerParamList, 'Perfil'>
-export type DrawerTypes = {
-  navigation: DrawerScreenNavigationProp
-}
- export function DrawerNavigation() {
-       const Drawer = createDrawerNavigator<DrawerParamList>();
+
+export function TabNavigation() {
+  const Tab = createBottomTabNavigator();
   return (
-    <Drawer.Navigator
+    <Tab.Navigator
       screenOptions={{
-        drawerStyle:{
+        tabBarActiveBackgroundColor: colors.primary,
+        tabBarActiveTintColor: colors.third,
+        headerStyle: {
           backgroundColor: colors.primary,
         },
-        drawerActiveTintColor: colors.primary
-      }}>
-      <Drawer.Screen name="Perfil" component={ScreenPerfil} 
-         options={{
-         }}
+        headerTintColor: colors.third
+      }}
+    >
+      <Tab.Screen name="Perfil" component={ScreenPerfil} 
+        options={{
+          tabBarIcon: () => (
+            <Ionicons name ='person' color={colors.third} size={24} />
+          ),
+        }}
       />
-    </Drawer.Navigator>
-  )
+      <Tab.Screen name="Camera" component={ScreenCamera} 
+       options={{
+        tabBarIcon: () => (
+          <AntDesign name='camera' color={colors.third} size={24} />
+        )
+      }}
+      />
+    </Tab.Navigator>
+  );
 }
