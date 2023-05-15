@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, KeyboardAvoidingView, TextInput} from "react-native";
 import { styles } from '././styles';
-import {MaterialIcons, Entypo} from '@expo/vector-icons';
+import {MaterialIcons, Entypo, MaterialCommunityIcons} from '@expo/vector-icons';
 import { colors } from '../../styles/colors';
 import {ComponentButtonInterface} from "../../components"
 import { LoginTypes } from "../../navigations/login.navigation"
@@ -34,7 +34,7 @@ export function Login({navigation}: LoginTypes) {
         
 
                 </View>
-                <ComponentButtonInterface title="Entrar" type="primary" onPressI={()=>{console.log("Login")}} />
+                <ComponentButtonInterface title="Entrar" type="primary" onPressI={()=>{navigation.navigate("Tab")}} />
                 <ComponentButtonInterface title="Cadastre-se" type="primary" onPressI={()=>{navigation.navigate("Cadastrar")}} />
             </KeyboardAvoidingView> 
         </View>
