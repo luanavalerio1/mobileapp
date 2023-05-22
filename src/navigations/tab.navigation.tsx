@@ -24,20 +24,20 @@ export function TabNavigation() {
         headerStyle: {
           backgroundColor: colors.primary,
         },
-        headerTintColor: colors.third
+        headerTintColor: colors.secondary
       }}
     >
       <Tab.Screen name="Perfil" component={ScreenPerfil} 
         options={{
           tabBarIcon: () => (
-            <Ionicons name ='person' color={colors.third} size={24} />
+            <Ionicons name ='person' color={colors.secondary} size={24} />
           ),
         }}
       />
-      <Tab.Screen name="Camera" component={ScreenCamera} 
+      <Tab.Screen name="Camera" component={ScreenCamera}
        options={{
         tabBarIcon: () => (
-          <AntDesign name='camera' color={colors.third} size={24} />
+          <AntDesign name='camera' color={colors.secondary} size={24} />
         )
       }}
       />
