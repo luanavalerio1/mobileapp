@@ -5,8 +5,10 @@ import { Button, Text, Image, View, Alert, TouchableOpacity } from 'react-native
 import { ComponentButtonInterface, ComponentButtonTakePicture } from '../../components';
 import * as MediaLibrary from 'expo-media-library'
 import * as ImagePicker from 'expo-image-picker'
+import * as FaceDetector from 'expo-face-detector'
+import { BarCodeScanner, BarCodeScannerResult } from 'expo-barcode-scanner';
 import { styles } from "./styles"
-import { Entypo } from '@expo/vector-icons';
+
 
 interface IPhoto {
   height: string
@@ -21,8 +23,11 @@ export  function CameraScreen() {
   const [photo, setPhoto] = useState<CameraCapturedPicture | ImagePicker.ImagePickerAsset>()
   const ref = useRef(null)
   const [takePhoto, setTakePhoto] = useState(false)
+  const [permissionQrCode, requestPermissionQrCode] = BarCodeScanner.usePermissions();
+  const [scanned, setScanned] = useState(false);
+  const[face, setFace] = useState<FaceDetector.FaceFeature>()
 
-  if (!permissionCamera) {
+  if (!permissionCamera ) {
     // Camera permissions are still loading
     return <View />;
 
@@ -77,18 +82,35 @@ export  function CameraScreen() {
     if (!result.canceled) {
       setPhoto(result.assets[0])
     }
-
+  }
+  const handleBarCodeScanned = ({type, data}: BarCodeScannerResult) => {
+    setScanned(true);
+    alert(data);
+  };
+  
+  function ler(){
+    setScanned(false)
   }
 
   return (
+
     <View style={styles.container}>
-      <>
-      {takePhoto ? (
-        
-      )}
-      </>
-
-
+            <ComponentButtonInterface title='Virar' type='primary' onPressI={toggleCameraType} />
+      <Camera style={styles.camera} type={type} ref={ref}
+        onBarCodeScanned ={scanned ? undefined : handleBarCodeScanned} >
+          
+      <TouchableOpacity onPress={toggleCameraType} style={styles.button}>
+      </TouchableOpacity>
+      </Camera>
+      <ComponentButtonInterface title='Ler Novamente' type='primary' onPressI={ler} />
+      <ComponentButtonInterface title='Tirar foto' type='primary' onPressI={takePicture} />
+      <ComponentButtonInterface title='Salvar Imagem' type='primary' onPressI={SavePhoto} />
+      <ComponentButtonInterface title='Abrir Imagem' type='primary' onPressI={PickImage} />
+  
+  
+   {photo && photo.uri && (
+     <Image source={{uri:photo.uri}} style={styles.img} />
+  )}
     </View>
-  );
-}
+    );
+      }
