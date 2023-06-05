@@ -30,6 +30,11 @@ export const styles = StyleSheet.create({
     img:{
     height: Dimensions.get('window').width * 0.7,
     width: Dimensions.get('window').width * 0.7,
+    },
+    sorriso: {
+      justifyContent: "space-between",
+      alignItems: "center"
+
     }
 
   });
