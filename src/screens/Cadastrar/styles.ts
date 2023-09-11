@@ -23,7 +23,7 @@ export const styles = StyleSheet.create({
     },
     icon:{
     fontSize: 24,
-    color: colors.third,
+    color: colors.black,
     padding: 10
 
     },

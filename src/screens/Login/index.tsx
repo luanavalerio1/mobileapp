@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, KeyboardAvoidingView, TextInput, Alert} from "react-native";
 import { styles } from '././styles';
 import {MaterialIcons, Entypo} from '@expo/vector-icons';
@@ -21,6 +21,7 @@ export function Login({navigation}: LoginTypes) {
     const {signIn} = useAuth();
     const [data, setData] = useState<IAuthenticate>();
     const [isLoading, setIsLoading] = useState(true);
+   
     async function handleSignIn() {
         try {
             setIsLoading(true);
@@ -37,6 +38,15 @@ export function Login({navigation}: LoginTypes) {
             setIsLoading(false);
         }
     }
+    function handleChange(item: IAuthenticate){
+        setData({...data, ...item})
+    }
+
+    useEffect(() => {
+        setTimeout(() => {
+            setIsLoading(false)
+        },2000)
+    },[])
     return (
         <View style={styles.container}>
             <KeyboardAvoidingView>
