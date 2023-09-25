@@ -8,25 +8,47 @@ import {registerForPushNotificationsAsync} from "../../services/data/Push";
 import {useAuth} from "../../hooks/auth";
 import {useEffect, useState} from "react"
 import { ComponentLoading } from "../../components"
+import { TouchableOpacity } from "react-native/types"
 Notifications.setNotificationHandler({
     handleNotification: async () => ({
-        sh
-    })
-}
-   
-)
-
+        shouldShowAlert: true,
+        shouldPlaySound: false,
+        shouldSetBadge: false,
+    }),
+});
 export function Perfil({ navigation }: TabTypes) {
     const {user} = useAuth()
-
+    const [isLoading, setIsLoading] = useState(true);
     function handleVoltar() {
         const tab = navigation.getParent()
         tab?.goBack()
     }
+    useEffect(() => {
+        if (user){
+            setIsLoading(false);
+        }
+    }, [user]);
+    useEffect(()=> {
+        async function fetchToken(){
+            const token = await registerForPushNotificationsAsync()
+            console.log(token)
+        }
+        fetchToken()
+    }, []);
     return(
-        <View style={styles.container}>
-        
-            <ComponentButtonInterface title="Voltar" type="primary" onPressI={handleVoltar} />
-        </View>
+        <>
+          {isLoading ? (
+            <ComponentLoading />
+          ) : (
+            <View style={styles.container}>
+                <Text>Perfil</Text>
+                <TouchableOpacity onPress={handleVoltar}>
+                    <Text>Voltar</Text>
+                </TouchableOpacity>
+            </View>
+          )}
+        </>
     )
-}
+          }
+        
+        
