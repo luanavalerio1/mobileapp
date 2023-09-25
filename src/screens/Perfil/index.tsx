@@ -8,7 +8,7 @@ import {registerForPushNotificationsAsync} from "../../services/data/Push";
 import {useAuth} from "../../hooks/auth";
 import {useEffect, useState} from "react"
 import { ComponentLoading } from "../../components"
-import { TouchableOpacity } from "react-native/types"
+import { TouchableOpacity } from "react-native-gesture-handler"
 Notifications.setNotificationHandler({
     handleNotification: async () => ({
         shouldShowAlert: true,

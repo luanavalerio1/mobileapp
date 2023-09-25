@@ -59,6 +59,7 @@ export function Login({navigation}: LoginTypes) {
                     keyboardType="email-address"
                     autoCapitalize='none'
                     style={styles.input} 
+                    onChangeText={(i)=>handleChange({email: i})}
                     />
 
                 </View>
@@ -70,6 +71,7 @@ export function Login({navigation}: LoginTypes) {
                    secureTextEntry={true}
                     autoCapitalize='none'
                     style={styles.input} 
+                    onChangeText={(i)=>handleChange({password: i})}
                     />
         
 
