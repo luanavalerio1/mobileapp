@@ -1,6 +1,6 @@
 import * as Device from 'expo-device'
-import { Alert, Platform } from 'react-native';
 import * as Notifications from 'expo-notifications';
+import { Alert, Platform } from 'react-native';
 import Constants from "expo-constants";
 import {apiUser} from '../';
 export interface IExtra {
@@ -33,9 +33,10 @@ export async function registerForPushNotificationsAsync() {
     token = (await Notifications.getExpoPushTokenAsync({
       projectId: extra.eas.projectId,
     }));
+    console.log(token)
     await apiUser.updateToken(token.data);
   } else {
-    alert('Você deve ter um dispositivo físico para receber notificações Push');
+    Alert.alert('Você deve ter um dispositivo físico para receber notificações Push');
   }
 
   return token;
